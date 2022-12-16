@@ -12,7 +12,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 public class Product {
-    private long id;
+    private int id;
     private String productName;
     private BigDecimal cost;
+    private boolean promotionalProduct;
 }

@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class DiscountCard {
-    private long id;
+    private int id;
     private String ownersEmail;
+    private int discount;
 }
