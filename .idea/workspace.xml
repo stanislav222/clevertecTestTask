@@ -4,16 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b9cd4eb-e096-483b-8090-32e0a8068269" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/model/dto/AdvancedResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/service/ReceiptService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/util/Calculation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/by/clevertec/service/ReceiptServiceTest.java" afterDir="false" />
+    <list default="true" id="5b9cd4eb-e096-483b-8090-32e0a8068269" name="Changes" comment="add AdvancedResponse, Calculation, ReceiptService">
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/cli/ArgsCLI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/cli/validation/PositiveInteger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/exception/ValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/model/SimpleMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/model/dto/TotalAmountDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/util/ReportTemplate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/CheckRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/CheckRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/DiscountCardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/DiscountCardDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/ProductDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/model/DiscountCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/model/DiscountCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/model/dto/AdvancedResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/model/dto/ProductAmountDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/service/ReceiptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/service/ReceiptService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/util/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/util/Calculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/clevertec/service/ReceiptServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/clevertec/service/ReceiptServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +44,11 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="ReceiptGenerator" type="f1a62948:ProjectNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ReceiptGenerator" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -61,6 +72,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.sdkman/candidates/java/17.0.4-amzn/lib/src.zip!/java.base/java/lang/reflect/InaccessibleObjectException.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -70,20 +84,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/user-kkona/.sdkman/candidates/gradle/7.5&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "/home/user-kkona/.sdkman/candidates/gradle/7.5",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -92,10 +106,11 @@
       <recent name="by.clevertec.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ReceiptServiceTest.getTotalAmount">
+  <component name="RunManager" selected="Application.CheckRunner">
     <configuration name="CheckRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="by.clevertec.CheckRunner" />
       <module name="ReceiptGenerator.main" />
+      <option name="PROGRAM_PARAMETERS" value="-p 1-6 -p 2-6 -c 1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="by.clevertec.*" />
@@ -154,12 +169,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.CheckRunner" />
+      <item itemvalue="JUnit.ReceiptServiceTest.generateListOfProductWithDiscount" />
+      <item itemvalue="JUnit.ReceiptServiceTest.getProduct" />
+      <item itemvalue="JUnit.ReceiptServiceTest.getTotalAmount" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ReceiptServiceTest.getTotalAmount" />
-        <item itemvalue="JUnit.ReceiptServiceTest.generateListOfProductWithDiscount" />
-        <item itemvalue="JUnit.ReceiptServiceTest.getProduct" />
         <item itemvalue="Application.CheckRunner" />
+        <item itemvalue="JUnit.ReceiptServiceTest.getTotalAmount" />
+        <item itemvalue="JUnit.ReceiptServiceTest.getProduct" />
+        <item itemvalue="JUnit.ReceiptServiceTest.generateListOfProductWithDiscount" />
       </list>
     </recent_temporary>
   </component>
@@ -173,8 +194,18 @@
       <updated>1671184684242</updated>
       <workItem from="1671184705743" duration="4232000" />
       <workItem from="1671189258504" duration="13632000" />
-      <workItem from="1671203353380" duration="13624000" />
+      <workItem from="1671203353380" duration="13723000" />
+      <workItem from="1671245382908" duration="8634000" />
+      <workItem from="1671254664672" duration="6781000" />
     </task>
+    <task id="LOCAL-00001" summary="add AdvancedResponse, Calculation, ReceiptService">
+      <created>1671217066906</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671217066907</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,16 +234,9 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/by/clevertec/service/ReceiptServiceTest.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add AdvancedResponse, Calculation, ReceiptService" />
+    <option name="LAST_COMMIT_MESSAGE" value="add AdvancedResponse, Calculation, ReceiptService" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

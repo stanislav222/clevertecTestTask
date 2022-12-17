@@ -14,17 +14,17 @@ public class DiscountCardDao {
             DiscountCard.builder()
                     .id(1)
                     .ownersEmail("test1@gmail.com")
-                    .discount(30)
+                    .discount(new BigDecimal("20.00"))
                     .build(),
             DiscountCard.builder()
                     .id(2)
                     .ownersEmail("test2@gmail.com")
-                    .discount(10)
+                    .discount(new BigDecimal("20.00"))
                     .build(),
             DiscountCard.builder()
                     .id(3)
                     .ownersEmail("test3@gmail.com")
-                    .discount(10)
+                    .discount(new BigDecimal("20.00"))
                     .build()
     );
 

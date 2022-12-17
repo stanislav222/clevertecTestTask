@@ -4,7 +4,8 @@ import by.clevertec.dao.DiscountCardDao;
 import by.clevertec.dao.ProductDao;
 import by.clevertec.model.DiscountCard;
 import by.clevertec.model.Product;
-import by.clevertec.model.dto.AdvancedResponse;
+import by.clevertec.model.dto.ProductAmountDto;
+import by.clevertec.model.dto.TotalAmountDto;
 import by.clevertec.util.Calculation;
 
 import java.math.BigDecimal;
@@ -13,8 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class ReceiptService {
-    public static final int percentPerItem = 10;
-    //public static final int percentPerAmount = 20;
+    public static final BigDecimal percentPerItem = new BigDecimal("10.00");
     private static final ProductDao productDao = new ProductDao();
     private static final DiscountCardDao discountCardDao = new DiscountCardDao();
 
@@ -26,15 +26,16 @@ public class ReceiptService {
         return productDao.readAll();
     }
 
-    public List<AdvancedResponse> generateListOfProductWithDiscount(HashMap<Integer, Integer> infoByProduct) {
-        List<AdvancedResponse> productList = new ArrayList<>();
+    public List<ProductAmountDto> generateListOfProductWithDiscount(HashMap<Integer, Integer> infoByProduct) {
+        List<ProductAmountDto> productList = new ArrayList<>();
         infoByProduct.forEach((key, value) -> {
             Product product = getProduct(key);
             BigDecimal totalPricePerItem;
             if (value > 5) {
                 totalPricePerItem = product.getCost().multiply(BigDecimal.valueOf(value));
                 BigDecimal discountOnPerItem = Calculation.percentage(totalPricePerItem, percentPerItem);
-                productList.add(convertToAdvancedResponse(product, value, discountOnPerItem));
+                productList.add(convertToAdvancedResponse(product, value,
+                        totalPricePerItem.subtract(discountOnPerItem)));
             } else {
                 totalPricePerItem = product.getCost().multiply(BigDecimal.valueOf(value));
                 productList.add(convertToAdvancedResponse(product, value, totalPricePerItem));
@@ -44,23 +45,35 @@ public class ReceiptService {
         return productList;
     }
 
-    public BigDecimal getTotalAmount(HashMap<Integer, Integer> infoByProducts, int idDiscountCard) {
+    public TotalAmountDto getTotalAmount(HashMap<Integer, Integer> infoByProducts, int idDiscountCard) {
         BigDecimal totalAmount = new BigDecimal("0.0");
-        List<AdvancedResponse> advancedResponses = generateListOfProductWithDiscount(infoByProducts);
+        List<ProductAmountDto> advancedRespons = generateListOfProductWithDiscount(infoByProducts);
         DiscountCard discountCard = discountCardDao.getDiscountCard(idDiscountCard);
-        for (AdvancedResponse advancedResponse : advancedResponses) {
-            totalAmount = totalAmount.add(advancedResponse.getTotalPrice());
+        for (ProductAmountDto productAmountDto : advancedRespons) {
+            totalAmount = totalAmount.add(productAmountDto.getTotalPrice());
         }
         if (discountCard != null) {
-            return Calculation.percentage(totalAmount, discountCard.getDiscount());
+            BigDecimal percentage = Calculation.percentage(totalAmount, discountCard.getDiscount());
+            return TotalAmountDto.builder()
+                    .subtotal(totalAmount)
+                    .discountPercent(discountCard.getDiscount())
+                    .discountAmount(percentage)
+                    .invoiceTotal(totalAmount.subtract(percentage))
+                    .build();
+            //return totalAmount.subtract(percentage);
         }
-        return totalAmount;
+        return TotalAmountDto.builder()
+                .subtotal(totalAmount)
+                .discountPercent(BigDecimal.ZERO)
+                .discountAmount(BigDecimal.ZERO)
+                .invoiceTotal(totalAmount)
+                .build();
     }
 
-    public AdvancedResponse convertToAdvancedResponse(Product product,
+    public ProductAmountDto convertToAdvancedResponse(Product product,
                                                       int quantity,
                                                       BigDecimal totalPricePerItem) {
-        return AdvancedResponse.builder()
+        return ProductAmountDto.builder()
                 .name(product.getProductName())
                 .price(product.getCost())
                 .quantity(quantity)

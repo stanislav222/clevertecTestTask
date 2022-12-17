@@ -1,10 +1,13 @@
 package by.clevertec.util;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Calculation {
-    public static BigDecimal percentage(BigDecimal base, int pct){
-        return base.multiply(BigDecimal.valueOf((double)pct/100));
+    private static final BigDecimal ONE_HUNDRED = new BigDecimal(100);
+    public static BigDecimal percentage(BigDecimal base, BigDecimal pct){
+        BigDecimal var = pct.divide(ONE_HUNDRED, 2, RoundingMode.UP);
+        return base.multiply(var);
     }
 
 }

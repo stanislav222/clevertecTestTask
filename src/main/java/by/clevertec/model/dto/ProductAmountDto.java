@@ -12,7 +12,7 @@ import java.text.DecimalFormat;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AdvancedResponse {
+public class ProductAmountDto {
     private int quantity;
     private String name;
     private BigDecimal price;
