@@ -60,7 +60,6 @@ public class ReceiptService {
                     .discountAmount(percentage)
                     .invoiceTotal(totalAmount.subtract(percentage))
                     .build();
-            //return totalAmount.subtract(percentage);
         }
         return TotalAmountDto.builder()
                 .subtotal(totalAmount)
