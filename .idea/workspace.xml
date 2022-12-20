@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b9cd4eb-e096-483b-8090-32e0a8068269" name="Changes" comment="add some test`s, add factory pattern for dao layer">
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/util/TxtGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/util/TxtGenerator.java" afterDir="false" />
+    <list default="true" id="5b9cd4eb-e096-483b-8090-32e0a8068269" name="Changes" comment="refactoring">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/model/DiscountCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/model/DiscountCard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,17 +32,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="ReceiptGenerator" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ReceiptGenerator" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ReceiptGenerator" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -94,7 +86,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -115,7 +107,7 @@
       <recent name="by.clevertec.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CheckRunner">
+  <component name="RunManager" selected="Gradle.ReceiptGenerator [clean]">
     <configuration name="CheckRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="by.clevertec.CheckRunner" />
       <module name="ReceiptGenerator.main" />
@@ -130,84 +122,104 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArgsCLITest.testArgsCommand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ReceiptGenerator.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="by.clevertec.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="by.clevertec.cli" />
-      <option name="MAIN_CLASS_NAME" value="by.clevertec.cli.ArgsCLITest" />
-      <option name="METHOD_NAME" value="testArgsCommand" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="ReceiptGenerator [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="ReceiptServiceTest.convertToAdvancedResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ReceiptGenerator.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="by.clevertec.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="by.clevertec.service" />
-      <option name="MAIN_CLASS_NAME" value="by.clevertec.service.ReceiptServiceTest" />
-      <option name="METHOD_NAME" value="convertToAdvancedResponse" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="ReceiptGenerator [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="ReceiptServiceTest.generateListOfProductWithDiscount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ReceiptGenerator.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="by.clevertec.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="by.clevertec.service" />
-      <option name="MAIN_CLASS_NAME" value="by.clevertec.service.ReceiptServiceTest" />
-      <option name="METHOD_NAME" value="generateListOfProductWithDiscount" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="ReceiptGenerator [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="ReceiptServiceTest.getTotalAmount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ReceiptGenerator.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="by.clevertec.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="by.clevertec.service" />
-      <option name="MAIN_CLASS_NAME" value="by.clevertec.service.ReceiptServiceTest" />
-      <option name="METHOD_NAME" value="getTotalAmount" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="ReceiptGenerator [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="testClasses" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Application.CheckRunner" />
-      <item itemvalue="JUnit.ArgsCLITest.testArgsCommand" />
-      <item itemvalue="JUnit.ReceiptServiceTest.convertToAdvancedResponse" />
-      <item itemvalue="JUnit.ReceiptServiceTest.generateListOfProductWithDiscount" />
-      <item itemvalue="JUnit.ReceiptServiceTest.getTotalAmount" />
+      <item itemvalue="Gradle.ReceiptGenerator [testClasses]" />
+      <item itemvalue="Gradle.ReceiptGenerator [build]" />
+      <item itemvalue="Gradle.ReceiptGenerator [clean]" />
+      <item itemvalue="Gradle.ReceiptGenerator [jar]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ReceiptGenerator [clean]" />
+        <item itemvalue="Gradle.ReceiptGenerator [build]" />
+        <item itemvalue="Gradle.ReceiptGenerator [testClasses]" />
+        <item itemvalue="Gradle.ReceiptGenerator [jar]" />
         <item itemvalue="Application.CheckRunner" />
-        <item itemvalue="JUnit.ArgsCLITest.testArgsCommand" />
-        <item itemvalue="JUnit.ReceiptServiceTest.convertToAdvancedResponse" />
-        <item itemvalue="JUnit.ReceiptServiceTest.getTotalAmount" />
-        <item itemvalue="JUnit.ReceiptServiceTest.generateListOfProductWithDiscount" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +236,7 @@
       <workItem from="1671203353380" duration="13723000" />
       <workItem from="1671245382908" duration="8634000" />
       <workItem from="1671254664672" duration="19205000" />
-      <workItem from="1671507527302" duration="17190000" />
+      <workItem from="1671507527302" duration="20820000" />
     </task>
     <task id="LOCAL-00001" summary="add AdvancedResponse, Calculation, ReceiptService">
       <created>1671217066906</created>
@@ -254,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671525282436</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactoring">
+      <created>1671525400167</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671525400167</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +308,8 @@
     <MESSAGE value="Refactoring + Writing to file" />
     <MESSAGE value="Add reading from file" />
     <MESSAGE value="add some test`s, add factory pattern for dao layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="add some test`s, add factory pattern for dao layer" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

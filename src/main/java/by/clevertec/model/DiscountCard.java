@@ -5,14 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class DiscountCard implements Serializable {
+public class DiscountCard {
     private int id;
     private String ownersEmail;
     private BigDecimal discount;
