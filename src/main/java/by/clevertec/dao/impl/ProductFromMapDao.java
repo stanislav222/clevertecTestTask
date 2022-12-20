@@ -1,6 +1,8 @@
-package by.clevertec.dao;
+package by.clevertec.dao.impl;
 
+import by.clevertec.dao.ProductDaoI;
 import by.clevertec.model.Product;
+import by.clevertec.util.TxtGenerator;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -8,7 +10,9 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class ProductDao {
+public class ProductFromMapDao implements ProductDaoI {
+
+    private static final TxtGenerator GENERATOR = new TxtGenerator();
 
     private static final List<Product> products = List.of(
             Product.builder().id(1).productName("product 1").cost(new BigDecimal("17")).build(),
@@ -23,7 +27,7 @@ public class ProductDao {
         return productMap.get(productId);
     }
 
-    public List<Product> readAll() {
+   public List<Product> readAll() {
         return products;
     }
 }

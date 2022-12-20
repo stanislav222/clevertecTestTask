@@ -1,7 +1,10 @@
 package by.clevertec.service;
 
-import by.clevertec.dao.DiscountCardDao;
-import by.clevertec.dao.ProductDao;
+import by.clevertec.dao.*;
+import by.clevertec.dao.impl.CardTxtReadingDF;
+import by.clevertec.dao.impl.DiscountCardFromMapDao;
+import by.clevertec.dao.impl.ProductTxtReadingDF;
+import by.clevertec.exception.SimpleException;
 import by.clevertec.model.DiscountCard;
 import by.clevertec.model.Product;
 import by.clevertec.model.dto.ProductAmountDto;
@@ -12,18 +15,20 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 public class ReceiptService {
-    public static final BigDecimal percentPerItem = new BigDecimal("10.00");
-    private static final ProductDao productDao = new ProductDao();
-    private static final DiscountCardDao discountCardDao = new DiscountCardDao();
+    public static final String DISCOUNT_PERCENTAGE = "10.00";
+    public static final BigDecimal percentPerItem = new BigDecimal(DISCOUNT_PERCENTAGE);
+    private static final ProductReadingDataFactory readingDataFactory = new ProductTxtReadingDF();
+    private static final ProductDaoI productDao = readingDataFactory.createReader();
+    private static final CardReadingDataFactory cardReadingDataFactory = new CardTxtReadingDF();
+    private static final DiscountCardDaoI discountCardDao = cardReadingDataFactory.createReader();
 
     public Product getProduct(int productId) {
-        return productDao.getProduct(productId);
-    }
-
-    public List<Product> generateListOfProduct() {
-        return productDao.readAll();
+        return Optional.ofNullable(productDao.getProduct(productId))
+                .orElseThrow(() ->
+                        new SimpleException(String.format("Product not found by id %s", productId)));
     }
 
     public List<ProductAmountDto> generateListOfProductWithDiscount(HashMap<Integer, Integer> infoByProduct) {

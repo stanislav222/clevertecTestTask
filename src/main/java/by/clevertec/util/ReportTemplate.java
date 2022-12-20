@@ -21,7 +21,7 @@ public class ReportTemplate {
     public static final String ADDRESS = "12, MILKYWAY GALAXY/ EARTH";
     public static final String TEL = "TEL: 123-456-7890";
     public static final String CASHIER = "CASHIER: №1520";
-    public static final String DELIMETER = "--".repeat(25);
+    public static final String DELIMITER = "--".repeat(25);
     public static final String TABLE_HEADERS = "QTY | DESCRIPTION | PRICE | TOTAL ";
     public static final String SUBTOTAL = "Subtotal:         ";
     public static final String DISCOUNT_PERCENT = "Discount percent: ";
@@ -46,7 +46,7 @@ public class ReportTemplate {
                 "" + ADDRESS+"\n" +
                 "" + TEL+"\n" +
                 "" + CASHIER + " | " + infoDataTime+"\n" +
-                "" + DELIMETER +
+                "" + DELIMITER +
                 "\n");
     }
 
@@ -69,7 +69,7 @@ public class ReportTemplate {
     public String getBasement(HashMap<Integer, Integer> products, int cardId) {
         TotalAmountDto totalAmount = receiptService.getTotalAmount(products, cardId);
         return String.format(
-                ""+ DELIMETER +"\n"
+                ""+ DELIMITER +"\n"
                 + SUBTOTAL + formatNumber(totalAmount.getSubtotal()) + "\n"
                 + DISCOUNT_PERCENT + formatNumber(totalAmount.getDiscountPercent()) + "%%\n"
                 + DISCOUNT_AMOUNT + formatNumber(totalAmount.getDiscountAmount())  + "\n"

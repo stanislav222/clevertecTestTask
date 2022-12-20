@@ -1,0 +1,2 @@
+1:test@mail.ru:20.00
+2:test2@mail.ru:50.00
