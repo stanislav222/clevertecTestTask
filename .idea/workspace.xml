@@ -4,32 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b9cd4eb-e096-483b-8090-32e0a8068269" name="Changes" comment="Add reading from file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/CardReadingDataFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/DiscountCardDaoI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/ProductDaoI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/ProductReadingDataFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/impl/CardMapReadingDF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/impl/CardTxtReadingDF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/impl/DiscountCardFromTxtDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/impl/ProductFromFileDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/impl/ProductMapReadingDF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/impl/ProductTxtReadingDF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/util/TxtGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cards.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/products.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/by/clevertec/cli/ArgsCLITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/CheckRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/CheckRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/DiscountCardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/impl/DiscountCardFromMapDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/dao/impl/ProductFromMapDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/model/DiscountCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/model/DiscountCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/service/ReceiptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/service/ReceiptService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/service/TxtGenerationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/util/ReportTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/util/ReportTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/clevertec/service/ReceiptServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/clevertec/service/ReceiptServiceTest.java" afterDir="false" />
+    <list default="true" id="5b9cd4eb-e096-483b-8090-32e0a8068269" name="Changes" comment="add some test`s, add factory pattern for dao layer">
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/clevertec/util/TxtGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/clevertec/util/TxtGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +224,7 @@
       <workItem from="1671203353380" duration="13723000" />
       <workItem from="1671245382908" duration="8634000" />
       <workItem from="1671254664672" duration="19205000" />
-      <workItem from="1671507527302" duration="16863000" />
+      <workItem from="1671507527302" duration="17190000" />
     </task>
     <task id="LOCAL-00001" summary="add AdvancedResponse, Calculation, ReceiptService">
       <created>1671217066906</created>
@@ -271,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671268292914</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add some test`s, add factory pattern for dao layer">
+      <created>1671525282436</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671525282436</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,18 +288,8 @@
     <MESSAGE value="add jcommander, fix interest calculation" />
     <MESSAGE value="Refactoring + Writing to file" />
     <MESSAGE value="Add reading from file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add reading from file" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/clevertec/dao/impl/ProductFromFileDao.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="add some test`s, add factory pattern for dao layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="add some test`s, add factory pattern for dao layer" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

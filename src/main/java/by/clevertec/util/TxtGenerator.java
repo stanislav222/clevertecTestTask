@@ -1,13 +1,13 @@
 package by.clevertec.util;
 
-import by.clevertec.dao.impl.DiscountCardFromMapDao;
-import by.clevertec.dao.impl.ProductFromMapDao;
 import by.clevertec.exception.SimpleException;
 import by.clevertec.model.DiscountCard;
 import by.clevertec.model.Product;
 
-import java.io.*;
-import java.lang.reflect.Field;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -79,63 +79,5 @@ public class TxtGenerator {
         return new DiscountCard(parts[0].trim(),
                 parts[1].trim(),
                 parts[2].trim());
-    }
-
-    @Deprecated
-    public void saveListToTxt() {
-        ProductFromMapDao productDao = new ProductFromMapDao();
-        DiscountCardFromMapDao discountCardDao = new DiscountCardFromMapDao();
-        List<Product> list1 = null;
-        List<DiscountCard> list2 = null;
-        try {
-            Field field1 = productDao.getClass().getDeclaredField("products");
-            Field field2 = discountCardDao.getClass().getDeclaredField("discountCards");
-            field1.setAccessible(true);
-            field2.setAccessible(true);
-            list1 = (List<Product>) field1.get(productDao);
-            list2 = (List<DiscountCard>) field2.get(discountCardDao);
-            System.out.println(list1);
-            System.out.println(list2);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
-        write(list1, RESULT_TMP_FOR_PRODUCTS);
-        write(list2, RESULT_TMP_FOR_CARDS);
-    }
-
-    @Deprecated
-    private void write(List<?> list, String path) {
-        try (var fos = new FileOutputStream(path);
-             var oos = new ObjectOutputStream(fos)){
-             oos.writeObject(list);
-        } catch (IOException e) {
-            throw new SimpleException(ERROR);
-        }
-    }
-    @Deprecated
-    public List<Product> readListFromFile() {
-        List<Product> products = null;
-        try (var fis = new FileInputStream(RESULT_TMP_FOR_PRODUCTS);
-             var ois = new ObjectInputStream(fis)){
-            products = (List<Product>) ois.readObject();
-        } catch (IOException e) {
-            throw new SimpleException(ERROR);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        return products;
-    }
-    @Deprecated
-    public List<DiscountCard> readListFromFile2() {
-        List<DiscountCard> discountCards = null;
-        try (var fis = new FileInputStream(RESULT_TMP_FOR_CARDS);
-             var ois = new ObjectInputStream(fis)){
-            discountCards = (List<DiscountCard>) ois.readObject();
-        } catch (IOException e) {
-            throw new SimpleException(ERROR);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        return discountCards;
     }
 }
